@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oggetti — Parra</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">PAR<span></span>RA</a>
+    <ul class="nav-links">
+      <li><a href="dipinti.html">Dipinti</a></li>
+      <li><a href="sculture.html" class="active">Sculture</a></li>
+      <li><a href="oggetti.html" class="active">Oggetti d'Arte</a></li>
+      <li><a href="chi-sono.html">Chi sono</a></li>
+      <li><a href="contatti.html">Contatti</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <h1>Oggetti d'Arte</h1>
+    <p class="sub">manufatti vari, decorazioni, steampunk </p>
+    <div class="accent-line"></div>
+  </header>
+
+  <section class="gallery-section">
+    <div class="gallery-grid" id="gallery">
+
+      <!-- ── oggetto 1 ── -->
+      <div class="art-card scultura fade-in" onclick="openLightbox({
+        img: 'img/oggetti/teb.jpg',
+        titolo: 'TEB',
+        anno: '2017',
+        descrizione: 'Te robot steampunk',
+        materiali: 'materiali di recupero',
+        dimensioni: '18 × 18 × 14 cm',
+        stato: 'Disponibile'
+      })">
+        <div class="art-card-img"><img src="img/oggetti/teb.jpg" alt="TEB" loading="lazy"></div>
+        <div class="art-card-info">
+          <div class="titolo">TEB - steampunk</div>
+          <div class="meta">2017 · riciclo · 18 × 18 × 14 cm</div>
+        </div>
+      </div> 
+
+
+      <!-- ── Aggiungi qui altre sculture ── -->
+
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightbox()">✕ CHIUDI</button>
+    <div class="lightbox-inner">
+      <div class="lightbox-img">
+        <img id="lb-img" src="" alt="">
+      </div>
+      <div class="lightbox-info">
+        <h2 id="lb-titolo"></h2>
+        <div class="lightbox-row"><span class="lbl">Anno</span><span class="val" id="lb-anno"></span></div>
+        <div class="lightbox-row"><span class="lbl">Descrizione</span><span class="val" id="lb-descr"></span></div>
+        <div class="lightbox-row"><span class="lbl">Materiali</span><span class="val" id="lb-mat"></span></div>
+        <div class="lightbox-row"><span class="lbl">Dimensioni</span><span class="val" id="lb-dim"></span></div>
+        <div class="lightbox-row"><span class="lbl">Stato</span><span class="val" id="lb-stato"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© <span id="year"></span> Parra — Tutti i diritti riservati</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function openLightbox(data) {
+      document.getElementById('lb-img').src = data.img;
+      document.getElementById('lb-img').alt = data.titolo;
+      document.getElementById('lb-titolo').textContent = data.titolo;
+      document.getElementById('lb-anno').textContent = data.anno;
+      document.getElementById('lb-descr').textContent = data.descrizione;
+      document.getElementById('lb-mat').textContent = data.materiali;
+      document.getElementById('lb-dim').textContent = data.dimensioni;
+      document.getElementById('lb-stato').textContent = data.stato;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox(e) {
+      if (e && e.target !== document.getElementById('lightbox') && !e.target.classList.contains('lightbox-close')) return;
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') { document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow = ''; }});
+
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
