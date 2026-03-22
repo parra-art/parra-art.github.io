@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sculture — Parra</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">PAR<span></span>RA</a>
+    <ul class="nav-links">
+      <li><a href="dipinti.html">Dipinti</a></li>
+      <li><a href="sculture.html" class="active">Sculture</a></li>
+      <li><a href="chi-sono.html">Chi sono</a></li>
+      <li><a href="contatti.html">Contatti</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <h1>Sculture</h1>
+    <p class="sub">Marmo, legno, manufatti dipinti</p>
+    <div class="accent-line"></div>
+  </header>
+
+  <section class="gallery-section">
+    <div class="gallery-grid" id="gallery">
+
+      <!-- ── SCULTURA 1 ── -->
+      <div class="art-card scultura fade-in" onclick="openLightbox({
+        img: 'img/sculture/piramidi_terracotta.jpg',
+        titolo: 'Piramidi',
+        anno: '2017',
+        tecnica: 'Terracotta/Acrilico',
+        dimensioni: '18 × 18 × 14 cm',
+        stato: 'Disponibile'
+      })">
+        <div class="art-card-img"><img src="img/sculture/piramidi_terracotta.jpg" alt="Piramidi Terracotta" loading="lazy"></div>
+        <div class="art-card-info">
+          <div class="titolo">Piramidi di Terracotta</div>
+          <div class="meta">2017 · Terracotta · 18 × 18 × 14 cm</div>
+        </div>
+      </div> 
+
+      <!-- ── SCULTURA 2 ── -->
+      <div class="art-card scultura fade-in" onclick="openLightbox({
+        img: 'img/sculture/rapace_parra.jpg',
+        titolo: 'Rapace',
+        anno: '2020',
+        tecnica: 'Pietra',
+        dimensioni: '18 × 11 × 22 cm',
+        stato: 'Disponibile'
+      })">
+        <div class="art-card-img"><img src="img/sculture/rapace_parra.jpg" alt="Rapace" loading="lazy"></div>
+        <div class="art-card-info">
+          <div class="titolo">Rapace</div>
+          <div class="meta">2020 · Pietra · 18 × 11 × 22 cm</div>
+        </div>
+      </div>
+
+      <!-- ── SCULTURA 3 ── -->
+      <div class="art-card scultura fade-in" onclick="openLightbox({
+        img: 'img/sculture/rettile_parra.jpg',
+        titolo: 'Rettile',
+        anno: '2020',
+        tecnica: 'Pietra',
+        dimensioni: '15 × 8 × 13 cm',
+        stato: 'Disponibile'
+      })">
+        <div class="art-card-img"><img src="img/sculture/rettile_parra.jpg" alt="Rettile" loading="lazy"></div>
+        <div class="art-card-info">
+          <div class="titolo">Rettile</div>
+          <div class="meta">2020 · Pietra · 15 × 8 × 13 cm</div>
+        </div>
+      </div>
+
+ <!-- ── SCULTURA 4 ── -->
+      <div class="art-card scultura fade-in" onclick="openLightbox({
+        img: 'img/sculture/testuggine_parra.jpg',
+        titolo: 'Testuggine',
+        anno: '2020',
+        tecnica: 'Pietra',
+        dimensioni: '14 × 11 × 8 cm',
+        stato: 'Disponibile'
+      })">
+        <div class="art-card-img"><img src="img/sculture/testuggine_parra.jpg" alt="Testuggine" loading="lazy"></div>
+        <div class="art-card-info">
+          <div class="titolo">Testuggine</div>
+          <div class="meta">2020 · Pietra · 14 × 11 × 8 cm</div>
+        </div>
+      </div>
+
+
+     <!-- ── SCULTURA 5 ── -->
+      <div class="art-card scultura fade-in" onclick="openLightbox({
+        img: 'img/sculture/uccello_parra.jpg',
+        titolo: 'Uccello',
+        anno: '2020',
+        tecnica: 'Pietra',
+        dimensioni: '16.5 × 7.5 × 11 cm',
+        stato: 'Disponibile'
+      })">
+        <div class="art-card-img"><img src="img/sculture/uccello_parra.jpg" alt="Uccello" loading="lazy"></div>
+        <div class="art-card-info">
+          <div class="titolo">Uccello</div>
+          <div class="meta">2020 · Pietra · 16.5 × 7.5 × 11 cm</div>
+        </div>
+      </div> 
+
+<!-- ── SCULTURA 6 ── -->
+      <div class="art-card scultura fade-in" onclick="openLightbox({
+        img: 'img/sculture/piramidi_cemento.jpg',
+        titolo: 'Piramidi',
+        anno: '2021',
+        tecnica: 'Cemento',
+        dimensioni: 'Varie',
+        stato: 'Disponibile'
+      })">
+        <div class="art-card-img"><img src="img/sculture/piramidi_cemento.jpg" alt="Piramidi Cemento" loading="lazy"></div>
+        <div class="art-card-info">
+          <div class="titolo">Piramidi</div>
+          <div class="meta">2021 · Cemento · dim. varie</div>
+        </div>
+      </div> 
+
+
+      <!-- ── Aggiungi qui altre sculture ── -->
+
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightbox()">✕ CHIUDI</button>
+    <div class="lightbox-inner">
+      <div class="lightbox-img">
+        <img id="lb-img" src="" alt="">
+      </div>
+      <div class="lightbox-info">
+        <h2 id="lb-titolo"></h2>
+        <div class="lightbox-row"><span class="lbl">Anno</span><span class="val" id="lb-anno"></span></div>
+        <div class="lightbox-row"><span class="lbl">Tecnica</span><span class="val" id="lb-tecnica"></span></div>
+        <div class="lightbox-row"><span class="lbl">Dimensioni</span><span class="val" id="lb-dim"></span></div>
+        <div class="lightbox-row"><span class="lbl">Stato</span><span class="val" id="lb-stato"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© <span id="year"></span> Parra — Tutti i diritti riservati</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function openLightbox(data) {
+      document.getElementById('lb-img').src = data.img;
+      document.getElementById('lb-img').alt = data.titolo;
+      document.getElementById('lb-titolo').textContent = data.titolo;
+      document.getElementById('lb-anno').textContent = data.anno;
+      document.getElementById('lb-tecnica').textContent = data.tecnica;
+      document.getElementById('lb-dim').textContent = data.dimensioni;
+      document.getElementById('lb-stato').textContent = data.stato;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox(e) {
+      if (e && e.target !== document.getElementById('lightbox') && !e.target.classList.contains('lightbox-close')) return;
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') { document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow = ''; }});
+
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

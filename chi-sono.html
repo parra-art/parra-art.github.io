@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi sono — Parra</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">PAR<span></span>RA</a>
+    <ul class="nav-links">
+      <li><a href="dipinti.html">Dipinti</a></li>
+      <li><a href="sculture.html">Sculture</a></li>
+      <li><a href="chi-sono.html" class="active">Chi sono</a></li>
+      <li><a href="contatti.html">Contatti</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <h1>Chi sono</h1>
+    <div class="accent-line"></div>
+  </header>
+
+  <section class="about-section">
+
+    <div class="about-text fade-in">
+      <h2>Parra</h2>
+
+      <!-- Sostituisci questo testo con la tua biografia -->
+      <p>
+        Pittore e scultore autodidatta, lavoro principalmente a Roma con un linguaggio 
+        che attinge a diverse culture visive, alle scritture simboliche 
+        e alla memoria storica collettiva.
+      </p>
+      <p>
+        Le mie tele nascono spesso da una sovrapposizione di segni: mappe, simboli, architetture 
+        viste dall'alto, scritture inventate. Prediligo i colori intrensi.
+      </p>
+      <p>
+        La scultura in pietra, terracotta e cemento è l'altro polo del mio lavoro: forme sintetiche, 
+        quasi arcaiche, lavorate a mano, a volte dipinte.
+      </p>
+      <p>
+        Espongo occasionalmente. Queste pagine raccolgono una selezione di opere 
+        degli ultimi anni.
+      </p>
+    </div>
+
+    <div class="about-img fade-in">
+      <!-- Sostituisci con una foto tua o di un'opera significativa -->
+      <img src="img/parra.jpg" alt="Parra al lavoro">
+    </div>
+
+  </section>
+
+  <footer>
+    <p>© <span id="year"></span> Parra — Tutti i diritti riservati</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatti — Parra</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">PAR<span></span>RA</a>
+    <ul class="nav-links">
+      <li><a href="dipinti.html">Dipinti</a></li>
+      <li><a href="sculture.html">Sculture</a></li>
+      <li><a href="chi-sono.html">Chi sono</a></li>
+      <li><a href="contatti.html" class="active">Contatti</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <h1>Contatti</h1>
+    <div class="accent-line"></div>
+  </header>
+
+  <section class="contact-section fade-in">
+    <p>Per informazioni sulle opere, esposizioni o collaborazioni.</p>
+
+    <div class="contact-items">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfMTnc-DUE9DAjf0Jz7Zh2SZekvWX8jvCcNOEjhL0wEwUbPnA/viewform?embedded=true" width="640" height="808" frameborder="0" marginheight="0" marginwidth="0">Caricamento…</iframe>
+
+   
+
+    </div>
+  </section>
+
+  <footer>
+    <p>© <span id="year"></span> Parra — Tutti i diritti riservati</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
