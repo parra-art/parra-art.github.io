@@ -10,7 +10,7 @@
     /* home-only: preview strips */
     .preview-strip {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 0;
       max-width: 100%;
     }
@@ -67,11 +67,11 @@
 <body>
 
   <nav>
-    <a href="index.html" class="nav-logo">PAR<span></span>RA</a>
+    <a href="index.html" class="nav-logo active">PAR<span></span>RA</a>
     <ul class="nav-links">
       <li><a href="dipinti.html">Dipinti</a></li>
       <li><a href="sculture.html">Sculture</a></li>
-      <li><a href="oggetti.html" class="active">Oggetti d'Arte</a></li>
+      <li><a href="oggetti.html">Oggetti d'Arte</a></li>
       <li><a href="chi-sono.html">Chi sono</a></li>
       <li><a href="contatti.html">Contatti</a></li>
     </ul>
@@ -88,10 +88,9 @@
     <div class="hero-content">
       <h1>PARRA</h1>
       <p class="tagline">Pittura · Scultura · Oggetti d'Arte</p>
+      <p class="hero-note">Opere originali tra simbolo, memoria e materia.</p>
       <div class="hero-ctas">
-        <a href="dipinti.html" class="btn primary">Dipinti</a>
-        <a href="sculture.html" class="btn">Sculture</a>
-        <a href="oggetti.html" class="btn">Oggetti d'Arte</a>
+        <a href="dipinti.html" class="btn primary">Opere disponibili</a>
       </div>
     </div>
   </section>
