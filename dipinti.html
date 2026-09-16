@@ -50,6 +50,7 @@
       <div class="art-card fade-in" onclick="openLightbox({
         img: 'img/dipinti/Mediterraneo_parra.jpg',
         titolo: 'Mediterraneo',
+        descrizione: 'Isola battuta da onde di culture meticce, correnti di pensiero che le danno forma.',
         anno: '2007',
         tecnica: 'Acrilico su tela',
         dimensioni: '50 × 40 cm',
@@ -67,6 +68,7 @@
       <div class="art-card fade-in" onclick="openLightbox({
         img: 'img/dipinti/SHOAH_parra.jpg',
         titolo: 'Shoah',
+        descrizione: 'La memoria affidata ai simboli, alle strutture, ai colori e ai frammenti di ciò che resta.',
         anno: '2007',
         tecnica: 'Acrilico su tela',
         dimensioni: '40 × 50 cm',
@@ -119,6 +121,7 @@
       <div class="art-card fade-in" onclick="openLightbox({
         img: 'img/dipinti/panspermia_parra.jpg',
         titolo: 'Panspermia',
+        descrizione: 'La vita dallo spazio: frammenti di materia stellare generano mondi complessi.',
         anno: '2009',
         tecnica: 'Acrilico su tela',
         dimensioni: '80 × 72 cm',
@@ -186,6 +189,7 @@
       <div class="art-card fade-in" onclick="openLightbox({
         img: 'img/dipinti/conoscenza_parra.jpg',
         titolo: 'Conoscenza',
+        descrizione: 'Nodi e legami, concetti e idee che prendono forma come una rete.',
         anno: '2020',
         tecnica: 'Acrilico su comp. di pioppo',
         dimensioni: '120 × 100 cm',
@@ -220,6 +224,7 @@
       <div class="art-card fade-in" onclick="openLightbox({
         img: 'img/dipinti/folla_parra.jpg',
         titolo: 'Folla',
+        descrizione: 'Sovrappopolazione e oppressione. Quando la massa cresce, lo spazio individuale si restringe e l’inciviltà prende il sopravvento.',
         anno: '2021',
         tecnica: 'Acrilico su comp. di pioppo',
         dimensioni: '120 × 50 cm',
@@ -271,6 +276,7 @@
       <div class="art-card fade-in" onclick="openLightbox({
         img: 'img/dipinti/KRN_parra.jpg',
         titolo: 'KRN',
+        descrizione: 'Cannoni, stragi di civili, distruzione. Nel titolo restano solo le consonanti: una parola mutilata, come ciò che la guerra sottrae.',
         anno: '2023',
         tecnica: 'Acrilico su comp. di pioppo',
         dimensioni: '120 × 50 cm',
@@ -314,6 +320,7 @@
       </div>
       <div class="lightbox-info">
         <h2 id="lb-titolo"></h2>
+        <p id="lb-descrizione" class="art-description" hidden></p>
         <div class="lightbox-row"><span class="lbl">Anno</span><span class="val" id="lb-anno"></span></div>
         <div class="lightbox-row"><span class="lbl">Tecnica</span><span class="val" id="lb-tecnica"></span></div>
         <div class="lightbox-row"><span class="lbl">Dimensioni</span><span class="val" id="lb-dim"></span></div>
@@ -333,6 +340,9 @@
       document.getElementById('lb-img').src = data.img;
       document.getElementById('lb-img').alt = data.titolo;
       document.getElementById('lb-titolo').textContent = data.titolo;
+      const descrizione = document.getElementById('lb-descrizione');
+      descrizione.textContent = data.descrizione || '';
+      descrizione.hidden = !data.descrizione;
       document.getElementById('lb-anno').textContent = data.anno;
       document.getElementById('lb-tecnica').textContent = data.tecnica;
       document.getElementById('lb-dim').textContent = data.dimensioni;
